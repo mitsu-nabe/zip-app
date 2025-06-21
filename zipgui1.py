@@ -14,9 +14,13 @@ class ZipSearch(tk.Frame):
 
 		# 入力テキスト（郵便番号）用変数
 		self.zip_entry_var = tk.StringVar()
+		# 数字以外は入力できないようにする
+		val_cmd = master.register(self.validate_digit)
 
 		# 入力テキスト用 Entry
 		self.zip_entry = tk.Entry(self.search_frame,
+					validate="key",
+					validatecommand=(val_cmd, "%S","%P",),
 					textvariable=self.zip_entry_var
 					)
 		self.zip_entry.pack(side='left')
@@ -26,10 +30,21 @@ class ZipSearch(tk.Frame):
 						text="検索",
 						command=self.search)
 		self.search_button.pack(side='left')
+		self.search_button["state"] = "disabled"
 
 		# 結果表示用のラベル
 		self.result_label = tk.Label(self, bg="lightblue", font=("", 18))
 		self.result_label.pack(fill=tk.X)
+
+	def validate_digit(self, char, entry_str):
+		if char.isdigit():
+			if len(entry_str) == 7:
+				self.search_button["state"] = "normal"
+			else:
+				self.search_button["state"] = "disabled"
+			return True
+		else:
+			return False
 	
 	def search(self):
 		zipcode = self.zip_entry_var.get()
