@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
 	"customers":[
 		{
@@ -16,4 +17,24 @@
 			"gender": "男"
 		}
 	]
+=======
+{
+	"customers":[
+		{
+			"name": "井上亨",
+			"age": 33,
+			"gender": "男"
+		},
+		{
+			"name": "江藤直子",
+			"age": "29",
+			"gender": "女"
+		},
+		{
+			"name": "権平秀人",
+			"age": "43",
+			"gender": "男"
+		}
+	]
+>>>>>>> origin/main
 }
