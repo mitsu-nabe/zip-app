@@ -36,7 +36,7 @@ python zip.app.py
 - ZipCloud APIの利用制限に注意してください。
 
 ## ライセンス
-MIT Licenseのもとで公開しています
+MIT Licenseのもとで公開しています。詳細はLICENSEファイルをご覧ください。
 
 ## 作者
 mitsu-nabe
